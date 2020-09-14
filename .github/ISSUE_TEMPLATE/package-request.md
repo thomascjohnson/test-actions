@@ -7,8 +7,5 @@ assignees: ''
 
 ---
 
-- name:
-  repo: 
-- name: 
-- tarball: 
-- zip:
+Packages: comma-separated package names here
+Repository: cloud.r-project.org
