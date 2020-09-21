@@ -1,0 +1,19 @@
+on:
+  issues:
+    type: [opened]
+
+jobs:
+  process_package_requests:
+    runs-on: ubuntu-latest
+    name: Add packages from open package requests
+    steps:
+    - name: Run package addition pipeline in docker
+      id add_package_pipeline
+      uses: ./run-add_package_pipeline.yml
+      with:
+        owner: "thomascjohnson"
+        repository: "test-actions"
+        labels: "package-request"
+        state: "open"
+        username: thomascjohnson
+        token: ${{ secrets.pat }}

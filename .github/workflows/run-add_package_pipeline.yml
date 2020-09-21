@@ -1,0 +1,40 @@
+name: 'Update repo'
+description: 'Grabs issues and adds compiled packages to the repository'
+
+inputs:
+  owner:
+    description: 'Repository owner/organization'
+    required: true
+  repository:
+    description: 'Repository name' 
+    required: true
+  labels:
+    description: 'Issue labels to limit to' 
+    required: true   
+    default: package-request
+  state:
+    description: 'Issue state to limit to' 
+    required: true   
+    default: open 
+  username:
+    description: 'Username to use for committing to repo' 
+    required: true   
+  token:
+    description: 'A Github PAT to read/write to the repo'
+    required: true   
+ 
+runs:
+  using: 'docker'
+  image: 'docker://gitcran/cflinuxfs3:r-4.0.2'
+  env:
+    GITCRAN_REPO_OWNER: ${{ inputs.owner }}
+    GITCRAN_REPO: ${{ inputs.repository }}
+    GITCRAN_LABELS: ${{ inputs.labels }}
+    GITCRAN_STATE: ${{ inputs.state }}
+    GITHUB_USER: ${{ inputs.username }}
+    GITHUB_PAT: ${{ inputs.token }}
+  entrypoint: 
+    - "R"
+    - "-e"
+    - "gitCRAN::package_request_pipeline()"
+
