@@ -9,7 +9,7 @@ jobs:
     steps:
     - name: Run package addition pipeline in docker
       id add_package_pipeline
-      uses: ./run-add_package_pipeline.yml
+      uses: ./.github/workflows/run-add_package_pipeline.yml
       with:
         owner: "thomascjohnson"
         repository: "test-actions"
