@@ -4,17 +4,17 @@ on:
 
 jobs:
   process_package_requests:
+    name: Add packages from open package requests
     container:
       image: gitcran/cflinuxfs3:r-4.0.2
-      name: Add packages from open package requests
-      steps:
-        - name: Run package addition pipeline in docker
-          id: add_package_pipeline
-          env:
-            GITCRAN_REPO_OWNER: "thomascjohnson"
-            GITCRAN_REPO: "test-actions"
-            GITCRAN_LABELS: "package-request"
-            GITCRAN_STATE: "open"
-            GITHUB_USER: thomascjohnson
-            GITHUB_TOKEN: ${{ secrets.pat }}
-          run: R -e "gitCRAN::package_request_pipeline()"
+    steps:
+      - name: Run package addition pipeline in docker
+        id: add_package_pipeline
+        env:
+          GITCRAN_REPO_OWNER: "thomascjohnson"
+          GITCRAN_REPO: "test-actions"
+          GITCRAN_LABELS: "package-request"
+          GITCRAN_STATE: "open"
+          GITHUB_USER: thomascjohnson
+          GITHUB_TOKEN: ${{ secrets.pat }}
+        run: R -e "gitCRAN::package_request_pipeline()"
