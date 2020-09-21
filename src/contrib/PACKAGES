@@ -1,0 +1,14 @@
+Package: jsonlite
+Version: 1.7.1
+Depends: methods
+Suggests: httr, curl, plyr, testthat, knitr, rmarkdown, R.rsp, sf
+License: MIT + file LICENSE
+MD5sum: 494740a17514ad7fa742b1c683c3a80b
+NeedsCompilation: yes
+
+Package: yaml
+Version: 2.2.1
+Suggests: RUnit
+License: BSD_3_clause + file LICENSE
+MD5sum: 967f0c8c6bd55b661a489d6435b2be59
+NeedsCompilation: yes
