@@ -16,6 +16,8 @@ jobs:
           GITCRAN_REPO: "test-actions"
           GITCRAN_LABELS: "package-request"
           GITCRAN_STATE: "open"
-          GITHUB_USER: thomascjohnson
-          GITHUB_TOKEN: ${{ secrets.pat }}
-        run: R -e "gitCRAN::package_request_pipeline()"
+          GITHUB_USER: "thomascjohnson"
+          GITHUB_TOKEN: "${{ secrets.pat }}"
+        run: |
+printenv
+R -e "gitCRAN::package_request_pipeline()"
