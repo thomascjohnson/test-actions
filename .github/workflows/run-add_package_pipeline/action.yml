@@ -33,8 +33,5 @@ runs:
     GITCRAN_STATE: ${{ inputs.state }}
     GITHUB_USER: ${{ inputs.username }}
     GITHUB_PAT: ${{ inputs.token }}
-  entrypoint: 
-    - "R"
-    - "-e"
-    - "gitCRAN::package_request_pipeline()"
+  entrypoint: 'entrypoint.sh'
 
