@@ -117,6 +117,13 @@ License: MIT + file LICENSE
 MD5sum: b3c267abf1518990bc3dea02a4a80251
 NeedsCompilation: yes
 
+Package: quietR
+Version: 0.1.0
+Suggests: testthat
+License: MIT + file LICENSE
+MD5sum: 2c25b1233c171b81d7501e78660c7179
+NeedsCompilation: no
+
 Package: sys
 Version: 3.4
 Suggests: unix (>= 1.4), spelling, testthat
