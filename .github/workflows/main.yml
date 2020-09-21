@@ -7,6 +7,8 @@ jobs:
     runs-on: ubuntu-latest
     name: Add packages from open package requests
     steps:
+    - name: Check out repository
+      uses: actions/checkout@v2
     - name: Run package addition pipeline in docker
       id: add_package_pipeline
       uses: ./.github/workflows/run-add_package_pipeline
