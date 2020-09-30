@@ -1,6 +1,6 @@
 on:
   issues:
-    type: [opened]
+    type: [labeled]
 
 jobs:
   process_package_requests:
